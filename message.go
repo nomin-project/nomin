@@ -1,48 +1,51 @@
 package main
 
 import (
-	"io/ioutil"
-	"os"
-	"os/user"
+	"encoding/json"
+	"fmt"
+
+	"github.com/agajdosi/nomin/pkg/sender"
 
 	"github.com/asticode/go-astilectron"
 	"github.com/asticode/go-astilectron-bootstrap"
 )
 
-// ListItem represents a list item
-type ListItem struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+type message struct {
+	Sender        string
+	Recipient     string
+	Subject       string
+	Text          string
+	ServerAddress string
+	ServerPort    string
 }
 
-// handleMessages handles messages
 func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload interface{}, err error) {
 	switch m.Name {
-	case "get.list":
-		// Get user
-		var u *user.User
-		if u, err = user.Current(); err != nil {
-			return
+	case "send.mail":
+		var err error
+		var result message
+		err = json.Unmarshal(m.Payload, &result)
+		if err != nil {
+			errorMessage := fmt.Sprint(err)
+			var message [2]string
+			message[0] = "Error unpacking data from input fields:"
+			message[1] = errorMessage
+			window.Send(bootstrap.MessageOut{Name: "sending.error", Payload: message})
+			return nil, nil
 		}
 
-		// Read dir
-		var files []os.FileInfo
-		if files, err = ioutil.ReadDir(u.HomeDir); err != nil {
-			return
+		err = sender.SendMail(result.Sender, result.Recipient, result.Subject, result.Text, result.ServerAddress, result.ServerPort)
+		if err != nil {
+			errorMessage := fmt.Sprint(err)
+			var message [2]string
+			message[0] = "Error while sending the message:"
+			message[1] = errorMessage
+			window.Send(bootstrap.MessageOut{Name: "sending.error", Payload: message})
+			return nil, nil
 		}
 
-		// Build list items
-		var items []ListItem
-		for _, f := range files {
-			var item = ListItem{Name: f.Name()}
-			if f.IsDir() {
-				item.Type = "dir"
-			} else {
-				item.Type = "file"
-			}
-			items = append(items, item)
-		}
-		payload = items
+		window.Send(bootstrap.MessageOut{Name: "sending.success", Payload: "Message has been successfully sent!"})
 	}
-	return
+
+	return nil, nil
 }

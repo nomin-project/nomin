@@ -1,0 +1,60 @@
+[[minishift]]
+= Nomin
+for radical artistic success
+:icons:
+:toc: macro
+:toc-title:
+:toclevels: 1
+
+toc::[]
+
+[[welcome-to-nomin]]
+== Welcome to Nomin!
+
+Nomin is a graphical application which allows you to send an email from addresses of famous curators to the email boxes of various fine art bienals, prizes and other cultural institutions.
+Nomin is here to help you with pushing your aristic career beyond all the thinkable horizons. 
+
+As the usage of Nomin can be questioned for its ethical aspects, it can be also viewed as a collective performance.
+Just think of it as an artistic project criticising the art world and everything will be alright.
+Or even better.
+
+[[warning]]
+== Warning
+
+Nomin is currently in stage of rapid development and thus its git history might be changing by `--force`.
+Better to wait with any forking until 6th of November 2017.
+
+[[getting-started]]
+== Getting started
+
+=== Installation
+
+To download the latest version of Nomin for Linux, macOS or Windows, see the https://github.com/nomin-project/nomin/releases[Nomin releases] page.
+Once the Nomin binary is downloaded you can run it:
+
+- on Windows just double-click the downloaded `nomin.exe` file
+- on Linux or macOS start it from terminal by executing `./nomin` command
+
+If you have any troubles with above instuctions or need more detailed explanation of it, please visit our https://github.com/nomin-project/nomin/blob/master/docs/installation.adoc[Installation guide].  
+
+=== Sending an email
+
+Will be created soon.
+
+[[more-info]]
+== More information
+
+This a place for interesting links about usage of Nomin.
+
+[[contact-us]]
+== Contact us
+
+If would like to contact a developer of this project, please write an email to `andreas.gajdosik@gmail.com`.
+
+[[community]]
+== Community
+
+Nomin is an open source project dedicated to help the beggining artists with their success.
+
+The basis for Nomin's GUI was forked from https://github.com/asticode[Quentin Renard]'s https://github.com/asticode/go-astilectron-demo[go-astilectron-demo].
+Since then it is being developed by Andreas Gajdosik, who is also author of the artistic concept for Nomin.

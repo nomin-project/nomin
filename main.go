@@ -2,6 +2,8 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"os/exec"
 
 	"github.com/asticode/go-astilectron"
 	"github.com/asticode/go-astilectron-bootstrap"
@@ -28,46 +30,67 @@ func main() {
 		AstilectronOptions: astilectron.Options{
 			AppName:            AppName,
 			AppIconDarwinPath:  "resources/gopher.icns",
-			AppIconDefaultPath: "resources/gopher.png",
+			AppIconDefaultPath: "resources/nomin.png",
 		},
 		Debug:    *debug,
 		Homepage: "index.html",
 		MenuOptions: []*astilectron.MenuItemOptions{
 			{
-				Label: astilectron.PtrStr(AppName),
+				Label: astilectron.PtrStr("Nomin"),
 				SubMenu: []*astilectron.MenuItemOptions{
+					{
+						Label: astilectron.PtrStr("About"),
+						OnClick: func(e astilectron.Event) (deleteListener bool) {
+							err := exec.Command("xdg-open", "https://github.com/nomin-project/nomin#about").Start()
+							if err != nil {
+								fmt.Println(err)
+							}
+							return
+						},
+					},
+					{
+						Label: astilectron.PtrStr("Contribute"),
+						OnClick: func(e astilectron.Event) (deleteListener bool) {
+							err := exec.Command("xdg-open", "https://github.com/nomin-project/nomin/blob/master/docs/contribute.adoc").Start()
+							if err != nil {
+								fmt.Println(err)
+							}
+							return
+						},
+					},
+					{
+						Type: astilectron.MenuItemTypeSeparator,
+					},
+					{
+						Role: astilectron.MenuItemRoleMinimize,
+					},
 					{
 						Role: astilectron.MenuItemRoleClose,
 					},
 				},
 			},
 			{
-				Label: astilectron.PtrStr("Style"),
+				Label: astilectron.PtrStr("Help"),
 				SubMenu: []*astilectron.MenuItemOptions{
 					{
-						Checked: astilectron.PtrBool(true),
-						Label:   astilectron.PtrStr("Dark"),
+						Label: astilectron.PtrStr("Report Bug"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							// Send
-							if err := window.Send(bootstrap.MessageOut{Name: "set.style", Payload: "dark"}); err != nil {
-								astilog.Error(errors.Wrap(err, "setting dark style failed"))
-								return
+							err := exec.Command("xdg-open", "http://www.github.com/nomin-project/nomin/issues").Start()
+							if err != nil {
+								fmt.Println(err)
 							}
 							return
 						},
-						Type: astilectron.MenuItemTypeRadio,
 					},
 					{
-						Label: astilectron.PtrStr("Light"),
+						Label: astilectron.PtrStr("Contact Developer"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							// Send
-							if err := window.Send(bootstrap.MessageOut{Name: "set.style", Payload: "light"}); err != nil {
-								astilog.Error(errors.Wrap(err, "setting dark style failed"))
-								return
+							err := exec.Command("xdg-open", "http://www.github.com/nomin-project/nomin#contact-us").Start()
+							if err != nil {
+								fmt.Println(err)
 							}
 							return
 						},
-						Type: astilectron.MenuItemTypeRadio,
 					},
 				},
 			},
@@ -89,8 +112,8 @@ func main() {
 		WindowOptions: &astilectron.WindowOptions{
 			BackgroundColor: astilectron.PtrStr("#333"),
 			Center:          astilectron.PtrBool(true),
-			Height:          astilectron.PtrInt(600),
-			Width:           astilectron.PtrInt(600),
+			Height:          astilectron.PtrInt(850),
+			Width:           astilectron.PtrInt(1200),
 		},
 	}); err != nil {
 		astilog.Fatal(errors.Wrap(err, "running bootstrap failed"))

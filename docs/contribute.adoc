@@ -1,0 +1,44 @@
+[[contribute]]
+= Contribute
+give back to the community
+:icons:
+:toc: macro
+:toc-title:
+:toclevels: 1
+
+toc::[]
+
+We are open and thankful for any kind of help.
+Please follow to a section which interests you:
+
+- <<sharing>>
+- <<design>>
+- <<documentation>>
+- <<coding>>
+- <<quality>>
+
+
+[[sharing]]
+== Sharing Nomin
+
+TBD
+
+[[design]]
+== Doing designing
+
+TBD
+
+[[documentation]]
+== Writing documentation
+
+TBD
+
+[[coding]]
+== Writing code
+
+TBD
+
+[[quality]]
+== Quality engineering
+
+TBD

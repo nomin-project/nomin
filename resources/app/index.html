@@ -2,17 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/css/base.css"/>
+    <link rel="stylesheet" href="static/css/index.css"/>
+    <link rel="stylesheet" href="static/css/styles.css"/>
+    <link rel="stylesheet" href="static/css/warning.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">  
 </head>
 <body class="dark">
-    <div class="container">
-        <div>Welcome on <b>Astilectron's demo</b>!</div>
-        <div>Here's a list of folders and files in your home directory:</div>
-        <div id="list"></div>
+
+<div class="container">
+    <div id="warningFade">
+        <div id="warningWindow">
+            
+            <span id="warningClose">&times;</span>
+            <span id="warningContent"></span>
+
+        </div>
     </div>
+
+
+
+        <div class="menu">
+            <h1>Select sender and recipient</h1>
+
+            <div>Choose a sender from list of extra cool curators:</div>
+            <select onchange="index.setMailSenderField()" id="mailSenderList">
+                <option value="Test Gajdosik &lt;andreas@hell.de&gt;">Test Andreas (.IO)</option>
+                <option value="Hans Ulrich Olbrist &lt;ulrich@olbrist.de&gt;">Hans Ulrich Olbrist (DE)</option>
+                <option value="Hito Steyerl &lt;hito@steyerl.de&gt;">Hito Steyerl (DE)</option>
+                <option value="Diedrich Diederichsen &lt;diedrich@diederichsen.de&gt;">Diedrich Diederichsen (DE)</option>
+                <option value="Name Surname &lt;name@organisation.com&gt;">custom email address</option>
+            </select>
+
+            <div>Choose a recipient from list of trendy galleries, or art prizes:</div>
+            <select onchange="index.setMailRecipientField()" id="mailRecipientList">
+                <option value="andreas.gajdosik@gmail.com">Andreas Gajdosik (CZE)</option>
+                <option value="info@cjch.cz">Jindrich Chalupecky Award (CZE)</option>
+                <option value="manifesta@manifest14.com">Manifesta 14 (International)</option>
+                <option value="name@organisation.com">custom email address</option>
+            </select>
+
+            <div>Choose a template for the text of the mail:</div>
+            <select onchange="index.setMailTemplate()" id="mailTemplateList">
+                <option>In hurry</option>
+                <option>Friendly</option>
+                <option>Cool</option>
+                <option>Serious</option>
+                <option>Playful</option>
+                <option>Let me be The Curator</option>
+            </select>
+        </div>
+
+        <div class="config">
+            <h1>Define a mail server</h1>
+            <div>To send the email Nomin needs the address and the port of open SMTP mail server.
+                 You can insert one manually or use our handy list of open SMTP servers.
+                 In case of any troubles, you can
+                 <a href="https://github.com/nomin-project/nomin/blob/master/docs/smtp.adoc">>>get more information here<<.<a>
+            </div>
+
+            <div id="serverConfigField">
+                <div>Address : Port</div>
+                <input type="text" id="serverAddressField" value="mail.upcmail.cz" onchange="index.setServerListCustom()"> :
+                <input type="text" id="serverPortField" value="25" onchange="index.setServerListCustom()">
+            </div>
+            <select onchange="index.setServerAddress()" id="serverList">
+                <option>UPC (CZ)</option>
+                <option>T-Mobile (CZ)</option>
+                <option>custom server address</option>
+            </select> ⮥
+        </div>
+
+        <div class="mailArea">
+            <h1>Write the email</h1>
+            <div>FROM:</div>
+            <input type="text" id="mailSenderField" class=mailAddressField onchange="index.setMailSenderListCustom()">
+
+            <div>TO:</div>
+            <input type="text" id="mailRecipientField" class=mailAddressField onchange="index.setMailRecipientListCustom()">
+
+            <div>SUBJECT:</div>
+            <input type="text" id="mailSubjectField">
+
+            <div>TEXT:</div>
+            <div>
+                <textarea id="mailTextField" rows="10">Type your message here...</textarea>
+            </div>
+
+            <input type="button" value="Send the email!" onclick="index.sendEmail()">
+
+            <input type="button" value="Open warning" onclick="warning.open()">
+        </div>
+
+</div>
+
     <script src="static/js/index.js"></script>
+    <script src="static/js/warning.js"></script>
     <script type="text/javascript">
         index.init();
     </script>
+
+
 </body>
 </html>
