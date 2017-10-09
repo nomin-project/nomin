@@ -1,0 +1,18 @@
+[[minishift]]
+= Installation
+for radical artistic success
+:icons:
+:toc: macro
+:toc-title:
+:toclevels: 1
+
+toc::[]
+
+== Download
+
+To download the latest version of Nomin for Linux, macOS or Windows, see the https://github.com/nomin-project/nomin/releases[Nomin releases] page.
+Once the Nomin binary is downloaded move it to the folder of your choice.
+
+== Windows
+
+To start Nomin on Windows operating system just click the downloaded `nomin.exe` binary and the Nomin window should automatically open.
