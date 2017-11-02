@@ -20,25 +20,3 @@ Please follow to a section which interests you:
 
 [[sharing]]
 == Sharing Nomin
-
-TBD
-
-[[design]]
-== Doing designing
-
-TBD
-
-[[documentation]]
-== Writing documentation
-
-TBD
-
-[[coding]]
-== Writing code
-
-TBD
-
-[[quality]]
-== Quality engineering
-
-TBD

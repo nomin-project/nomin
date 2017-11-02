@@ -93,10 +93,11 @@ var index = {
 };
 
 const MAIL_TEMPLATES = [
-    ["quick tipping", "hi \n\nthis got my eye yesterday,\ncheck it out: <portfolio-link-here>\n\n--mr. Curator"],
-    ["cool subject", "cool message"],
-    ["overly subject", "overly text"],
-    ["conservative subject", "conservative text"],
+    ["...", "hi\njust looking on pieces of <your-name> and its fresh. you could be interested. -<name-of-curator>"],
+    ["open for reccommendation?", "Hello,\nI thought that maybe you could be interested in a small tip of mine,\nif so check this portfolio out ;)\n\n<your-portfolio-link-here>\n\nCheers!\n<name-of-curator>"],
+    ["just a tip", "hi \n\nthis got my eye yesterday,\ncheck it out: <your-portfolio-link-here>\n\n--<name-of-curator>"],
+    ["A tip for an artist", "Hello,\n\ndo you mind a tip for an artist? I think you could be interested: \n\n<your-portfolio>\n\nWishes,\n<name-of-curator>\n<institution>"],
+    ["artplay", "Hi,\n\nsending you an artist <your-portfolio-here>\n\nit's your turn ;)\n\n--<name-of-curator>"],
     ["", ""]
 ]
 
