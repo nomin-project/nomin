@@ -31,6 +31,13 @@ var index = {
             "payload": message
         })
     },
+    OpenAboutSMTP: function() {
+        console.log("clicked")
+        astilectron.send({
+            "name": "OpenAboutSMTP",
+            "payload": "open"
+        })
+    },
 
     //MAIL SENDER
     setMailSenderListCustom: function() {

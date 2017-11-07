@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/agajdosi/nomin/pkg/sender"
+	"github.com/pkg/browser"
 
 	"github.com/asticode/go-astilectron"
 	"github.com/asticode/go-astilectron-bootstrap"
@@ -45,6 +46,13 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 		}
 
 		window.Send(bootstrap.MessageOut{Name: "sending.success", Payload: "Message has been successfully sent!"})
+
+	case "OpenAboutSMTP":
+		err := browser.OpenURL("https://github.com/nomin-project/nomin/blob/master/docs/smtp.adoc")
+		if err != nil {
+			fmt.Println(err)
+		}
+		return nil, nil
 	}
 
 	return nil, nil

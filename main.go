@@ -3,11 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	"os/exec"
 
 	"github.com/asticode/go-astilectron"
 	"github.com/asticode/go-astilectron-bootstrap"
 	"github.com/asticode/go-astilog"
+	"github.com/pkg/browser"
 	"github.com/pkg/errors"
 )
 
@@ -41,7 +41,8 @@ func main() {
 					{
 						Label: astilectron.PtrStr("About"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							err := exec.Command("xdg-open", "https://github.com/nomin-project/nomin#about").Start()
+							//err := exec.Command("xdg-open", "https://github.com/nomin-project/nomin#about").Start()
+							err := browser.OpenURL("https://github.com/nomin-project/nomin#about")
 							if err != nil {
 								fmt.Println(err)
 							}
@@ -51,7 +52,7 @@ func main() {
 					{
 						Label: astilectron.PtrStr("Contribute"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							err := exec.Command("xdg-open", "https://github.com/nomin-project/nomin/blob/master/docs/contribute.adoc").Start()
+							err := browser.OpenURL("https://github.com/nomin-project/nomin/blob/master/docs/contribute.adoc")
 							if err != nil {
 								fmt.Println(err)
 							}
@@ -75,7 +76,7 @@ func main() {
 					{
 						Label: astilectron.PtrStr("Report Bug"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							err := exec.Command("xdg-open", "http://www.github.com/nomin-project/nomin/issues").Start()
+							err := browser.OpenURL("http://www.github.com/nomin-project/nomin/issues")
 							if err != nil {
 								fmt.Println(err)
 							}
@@ -85,7 +86,7 @@ func main() {
 					{
 						Label: astilectron.PtrStr("Contact Developer"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							err := exec.Command("xdg-open", "http://www.github.com/nomin-project/nomin#contact-us").Start()
+							err := browser.OpenURL("http://www.github.com/nomin-project/nomin#contact-us")
 							if err != nil {
 								fmt.Println(err)
 							}
