@@ -1,5 +1,5 @@
-[[contribute]]
-= Contribute
+[[smtp]]
+= SMTP configuration
 give back to the community
 :icons:
 :toc: macro
@@ -8,15 +8,41 @@ give back to the community
 
 toc::[]
 
-We are open and thankful for any kind of help.
-Please follow to a section which interests you:
+[[about-smtp]]
+== About SMTP
 
-- <<sharing>>
-- <<design>>
-- <<documentation>>
-- <<coding>>
-- <<quality>>
+SMTP is an acronym for simple mail transfer protocol.
+Its simplistic design makes it extremely easy to use but also relatively vulnerable for a misuse.
+For example, Nomin uses a fact that SMTP allows its users to manually enter the email address of the sender of the email.
+As this feature of SMTP can be used for various spamming or phising activities, the administrators and owners of mail servers try to prevent it which save their reputation.
 
+Due to this fact most SMTP servers today requires a authentication, or are open, used by spammers and are present on various spam lists.
+This prevents them from actually being able to deliver the email.
 
-[[sharing]]
-== Sharing Nomin
+However some servers are still open and with good reputation.
+And these are mostly open SMTP server of your Internet Service Provider (ISP).
+In next part we will try how to find one of them. 
+
+[[finding-smtp]]
+== How to find SMTP server
+
+You can use any open SMTP server you want.
+However in this guide we will focus on servers provided by ISPs as those are relatively respected.
+
+[[getting-isp]]
+=== Getting name of ISP
+
+As first step you need to find a name of ISP of the network you are connected to.
+It should be easiest if you are home or connected via hotspot on your phone.
+Worse it can be when you are connected in a pub or public school.
+
+=== Search for the server
+
+Once you have the name of ISP you need to search the internet if there are any unformation about your ISP providing its own open SMTP server.
+A good sign is if the address of the server contains "smtp" or "mail" and has the port "25".   
+
+=== Verification of the address
+
+Once you have the possible address of the SMTP server we recommend to verify its functionality.
+To do so please start Nomin, configure it to use the address you have find and try to send the email to your own mailbox.
+If the email is successfully transfered into your inbox, then congratulations, you are ready to use the Nomin. 

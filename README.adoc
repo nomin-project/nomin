@@ -18,12 +18,6 @@ As the usage of Nomin can be questioned for its ethical aspects, it can be also 
 Just think of it as an artistic project criticising the art world and everything will be alright.
 Or even better.
 
-[[warning]]
-== Warning
-
-Nomin is currently in stage of rapid development and thus its git history might be changing by `--force`.
-Better to wait with any forking until 6th of November 2017.
-
 [[getting-started]]
 == Getting started
 
@@ -33,23 +27,55 @@ To download the latest version of Nomin for Linux, macOS or Windows, see the htt
 Once the Nomin binary is downloaded you can run it:
 
 - on Windows just double-click the downloaded `nomin.exe` file
-- on Linux or macOS start it from terminal by executing `./nomin` command
+- on Linux double-click the binary or start it from terminal by executing `./nomin-linux` command
+- on Mac you need first to extract the downloaded archive and then start the binary inside of it
 
-If you have any troubles with above instuctions or need more detailed explanation of it, please visit our https://github.com/nomin-project/nomin/blob/master/docs/installation.adoc[Installation guide].  
+If you have any troubles with above instructions or need more detailed explanation of it, please visit our https://github.com/nomin-project/nomin/blob/master/docs/installation.adoc[Installation guide].  
 
-=== Sending an email
+=== Configuring SMTP
 
-Will be created soon.
+To be able to successfully send the email Nomin needs the information about which open SMTP server it should use.
+Please navigate to the "Define a mail server" part of the Window and insert the address and port of the SMTP server you want to use.
+
+This is the most unfriendly part of the Nomin usage.
+If you do not know which address to insert, please visit our https://github.com/nomin-project/nomin/blob/master/docs/smtp.adoc[SMTP Guide] which will help you. 
+
+=== Sending the email
+
+==== Using templates
+
+Nomin gives the option to use predefined templates.
+These are templates for the sender of the email, its recipient and the text of the actual email.
+These can be accessed in "Select sender and recipient" part of the Nomin window.
+However you are not obligged to use them at all.
+
+==== Editing the email text
+
+If you have used the templates or not, navigate your sight to "Write the email" part of the Nomin window, where you can edit or write the complete email by yourself.
+We recommend to try to send the email to your own mailbox at first to see if everything works well.
+
+==== Sending
+
+Once you are done and happy with whole email, hit the send button and wait for confirming pop-up message in the Nomin window.
+If you see the "Message has been successfully sent" you are done.
+Your first fake email has been sent.
+Congratulations and we wish you best of luck with your exhibition!
+
+== Getting help, resolving problems
+
+If you are facing any trouble while using Nomin, please visit our https://github.com/nomin-project/nomin/issuess[Bug Tracker] here on Github.
+We are thankful for any feedback and willing to answer any Nomin related question there.
+Also if you have any suggestion for future functionality or improvement of Nomin, let us know.
+
+[[contact-us]]
+== Contact us
+
+If would like to contact a developer of this project directly, please write an email to `andreas.gajdosik@gmail.com`.
 
 [[more-info]]
 == More information
 
 This a place for interesting links about usage of Nomin.
-
-[[contact-us]]
-== Contact us
-
-If would like to contact a developer of this project, please write an email to `andreas.gajdosik@gmail.com`.
 
 [[community]]
 == Community

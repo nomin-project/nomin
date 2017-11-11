@@ -6,39 +6,39 @@ give back to the community
 :toc-title:
 :toclevels: 1
 
+We are open and thankful for any kind of help with or around Nomin.
+If you would like to contribute, please follow to a section which interests you:
+
 toc::[]
-
-We are open and thankful for any kind of help.
-Please follow to a section which interests you:
-
-- <<sharing>>
-- <<design>>
-- <<documentation>>
-- <<coding>>
-- <<quality>>
-
 
 [[sharing]]
 == Sharing Nomin
 
-TBD
+The easiest way to help the Nomin is to share it on social networks, write an article or just tell your artistic friends.
+We would appreciate if you let us know about any longer text you wrote about Nomin.
 
 [[design]]
-== Doing designing
+== Doing design
 
-TBD
+Nomin is lacking proper graphic design for example, we are completely missing a logo.
+If you are a graphic designer and you would like to help, create an issue or write us an email. 
 
 [[documentation]]
 == Writing documentation
 
-TBD
+We are trying to have Nomin documented well.
+However there are still options to improve.
+If you would like to correct some typos, improve the style and language, or write your own tutorials or new parts of Nomin documentation we will be really happy.
 
 [[coding]]
 == Writing code
 
-TBD
+Nomin is written in Go, JavaScript, HTML and CSS in a simplistic way.
+We will welcome any begginer or advanced programmer who would like to improve our codebase.
 
 [[quality]]
 == Quality engineering
 
-TBD
+This would be a dream.
+If you are into tests, let us know!
+We are lacking this field completely.
