@@ -1,1 +1,0 @@
-const COOL_CURATOR = "Hi, I am just writting you!";
