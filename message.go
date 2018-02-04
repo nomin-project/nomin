@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/agajdosi/nomin/pkg/sender"
+	"github.com/nomin-project/nomin/pkg/sender"
 	"github.com/pkg/browser"
 
 	"github.com/asticode/go-astilectron"
