@@ -17,12 +17,16 @@ jobs:
     #### expecting it in the form of
     ####   /go/src/github.com/circleci/go-tool
     ####   /go/src/bitbucket.org/circleci/go-tool
-    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    working_directory: /go/src/github.com/nomin-project/nomin
     steps:
       - checkout
 
       # specify any bash command here prefixed with `run: `
       - run: go get -u github.com/asticode/go-astilectron-bundler/...
       - run: go get -u github.com/asticode/go-astilectron-bootstrap/...
+      - run: go get -u github.com/mattn/go-colorable
+      - run: go get -u gopkg.in/gomail.v2
       - run: go get -u github.com/pkg/browser
       - run: astilectron-bundler -v -l
+      - run: astilectron-bundler -v -w
+      - run: astilectron-bundler -v -d
