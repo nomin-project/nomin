@@ -15,8 +15,6 @@ window.onclick = function(event) {
 var warning = {
     open: function() {
         warningFade.style.display = "block";
-        document.getElementById("warningContent").textContent = "Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye Bye! Bye Bye Bye";
-        //document.getElementById("warningContent").textContent = "Bye Bye";        
-      
+        document.getElementById("warningContent").textContent = "Bye Bye";
     }
 }
