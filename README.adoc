@@ -1,10 +1,11 @@
-[[minishift]]
+[[nomin]]
 = Nomin
-for radical artistic success
 :icons:
 :toc: macro
 :toc-title:
 :toclevels: 1
+
+image:https://circleci.com/gh/nomin-project/nomin.svg?style=svg["CircleCI", link="https://circleci.com/gh/nomin-project/nomin"]
 
 toc::[]
 
