@@ -31,7 +31,7 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 			var message [2]string
 			message[0] = "Error unpacking data from input fields:"
 			message[1] = errorMessage
-			window.Send(bootstrap.MessageOut{Name: "sending.error", Payload: message})
+			window.SendMessage(bootstrap.MessageOut{Name: "sending.error", Payload: message})
 			return nil, nil
 		}
 
@@ -41,11 +41,11 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 			var message [2]string
 			message[0] = "Error while sending the message:"
 			message[1] = errorMessage
-			window.Send(bootstrap.MessageOut{Name: "sending.error", Payload: message})
+			window.SendMessage(bootstrap.MessageOut{Name: "sending.error", Payload: message})
 			return nil, nil
 		}
 
-		window.Send(bootstrap.MessageOut{Name: "sending.success", Payload: "Message has been successfully sent!"})
+		window.SendMessage(bootstrap.MessageOut{Name: "sending.success", Payload: "Message has been successfully sent!"})
 
 	case "OpenAboutSMTP":
 		err := browser.OpenURL("https://github.com/nomin-project/nomin/blob/master/docs/smtp.adoc")
