@@ -11,10 +11,3 @@ window.onclick = function(event) {
         warningFade.style.display = "none";
     }
 }
-
-var warning = {
-    open: function() {
-        warningFade.style.display = "block";
-        document.getElementById("warningContent").textContent = "Bye Bye";
-    }
-}

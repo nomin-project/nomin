@@ -41,7 +41,6 @@ func main() {
 					{
 						Label: astilectron.PtrStr("About"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
-							//err := exec.Command("xdg-open", "https://github.com/nomin-project/nomin#about").Start()
 							err := browser.OpenURL("https://github.com/nomin-project/nomin#about")
 							if err != nil {
 								fmt.Println(err)
