@@ -1,4 +1,4 @@
-var index = {
+let index = {
     init: function() {
 
         document.getElementById("mailSenderList").value = ""
@@ -26,14 +26,14 @@ var index = {
             "ServerAddress" : document.getElementById("serverAddressField").value,
             "ServerPort" : document.getElementById("serverPortField").value,
         }
-        astilectron.send({
+        astilectron.sendMessage({
             "name": "send.mail",
             "payload": message
         })
     },
     OpenAboutSMTP: function() {
         console.log("clicked")
-        astilectron.send({
+        astilectron.sendMessage({
             "name": "OpenAboutSMTP",
             "payload": "open"
         })
@@ -78,7 +78,7 @@ var index = {
     },
 
     listen: function() {
-        astilectron.listen(function(message) {
+        astilectron.onMessage(function(message) {
             switch (message.name) {
                 case "set.emailSender":
                     document.getElementById("list").innerHTML = message.payload;
