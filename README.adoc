@@ -9,7 +9,7 @@ image:https://circleci.com/gh/nomin-project/nomin.svg?style=svg["CircleCI", link
 
 toc::[]
 
-[[welcome-to-nomin]]
+[[welcome]]
 == Welcome to Nomin!
 
 Nomin is a graphical application which allows you to send an email from addresses of famous curators to the email boxes of various fine art bienals, prizes and other cultural institutions.
@@ -59,29 +59,42 @@ We recommend to try to send the email to your own mailbox at first to see if eve
 
 Once you are done and happy with whole email, hit the send button and wait for confirming pop-up message in the Nomin window.
 If you see the "Message has been successfully sent" you are done.
-Your first fake email has been sent.
-Congratulations and we wish you best of luck with your exhibition!
+Congratulations, your first fake email has been sent.
 
+We wish you best of luck with your exhibition!
+
+[[additional-information]]
+== Additional information
+=== Privacy statement
+
+Nomin does not collect any subject or text of the emails sent with it.
+To improve its usage Nomin however collects the data about the sender's and recipient's email addresses and the SMTP server used.
+Its reason is to add more usable SMTP servers to the Nomin and have data about which galleries and curators are popular.
+Privacy of the users is however untouched because the texts and strategies they use to fool galleries is kept absolutely private.
+Texts and subjects of emails are private.
+This is secured also by keeping the source code of the Nomin open and publicly available.
+
+[[help]]
 == Getting help, resolving problems
 
 If you are facing any trouble while using Nomin, please visit our https://github.com/nomin-project/nomin/issuess[Bug Tracker] here on Github.
 We are thankful for any feedback and willing to answer any Nomin related question there.
 Also if you have any suggestion for future functionality or improvement of Nomin, let us know.
 
-[[contact-us]]
-== Contact us
-
-If would like to contact a developer of this project directly, please write an email to `andreas.gajdosik@gmail.com`.
-
-[[more-info]]
-== More information
-
-This a place for interesting links about usage of Nomin.
-
 [[community]]
 == Community
 
-Nomin is an open source project dedicated to help the beggining artists with their success.
+Nomin is an open source collaborative project dedicated to help the beginning artists with their success.
+We appreciate any bug report, suggestion for improvement, sharing of the project or other kind of help.
+Feel free to get in touch with us.
 
-The basis for Nomin's GUI was forked from https://github.com/asticode[Quentin Renard]'s https://github.com/asticode/go-astilectron-demo[go-astilectron-demo].
-Since then it is being developed by Andreas Gajdosik, who is also author of the artistic concept for Nomin.
+=== Contact
+
+To contact the developer of this project, please write an email to `andreas.gajdosik@gmail.com`.
+
+=== Thanks to:
+
+- https://github.com/asticode[Quentin Renard] - author of https://github.com/asticode/go-astilectron-demo[go-astilectron-demo],
+- Marketa Wagnerova - photography for the Nomin website,
+- Anna Tesarova - model and suggestions,
+- Tomas Panacik Moravansky - important bug reports. 

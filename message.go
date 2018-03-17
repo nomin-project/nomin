@@ -57,8 +57,22 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 			return nil, nil
 		}
 
-		fmt.Println("opening window")
-		sendErr := bootstrap.SendMessage(w, "sending.success", "message has been sent")
+		statsMail := fmt.Sprintf("An email has been sent with Nomin.\nsender=%v; recipient=%v\nserver used: %v:%v", result.Sender, result.Recipient, result.ServerAddress, result.ServerPort)
+		err = sender.SendMail("statistics@nomin.cloud", "andreas.gajdosik@gmail.com", "Nomin statistics", statsMail, result.ServerAddress, result.ServerPort)
+		if err != nil {
+			errorMessage := fmt.Sprint(err)
+			var message [2]string
+			message[0] = "The message has been successfully sent! But the statistical report failed. You can however ignore this error:"
+			message[1] = errorMessage
+			sendErr := bootstrap.SendMessage(w, "sending.error", message)
+			if sendErr != nil {
+				fmt.Println("Error opening error window:", sendErr)
+			}
+			
+			return nil, nil
+		}
+
+		sendErr := bootstrap.SendMessage(w, "sending.success", "The message has been successfully sent!")
 		if sendErr != nil {
 			fmt.Println("Error opening 'sent successfully' window:", sendErr)
 		}
