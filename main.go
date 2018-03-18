@@ -29,8 +29,8 @@ func main() {
 		Asset: Asset,
 		AstilectronOptions: astilectron.Options{
 			AppName:            AppName,
-			AppIconDarwinPath:  "resources/gopher.icns",
-			AppIconDefaultPath: "resources/nomin.png",
+			AppIconDarwinPath:  "resources/graphics/icon.icns",
+			AppIconDefaultPath: "resources/graphics/icon-512.png",
 		},
 		Debug:    *debug,
 		Homepage: "index.html",
@@ -106,7 +106,7 @@ func main() {
 		},
 		RestoreAssets: RestoreAssets,
 		TrayOptions: &astilectron.TrayOptions{
-			Image:   astilectron.PtrStr("resources/tray.png"),
+			Image:   astilectron.PtrStr("resources/graphics/icon-20.png"),
 			Tooltip: astilectron.PtrStr("Wow, what a beautiful tray!"),
 		},
 		WindowOptions: &astilectron.WindowOptions{
