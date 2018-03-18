@@ -1,7 +1,7 @@
 {
   "app_name": "Nomin v1.0.1-2",
-  "icon_path_darwin": "resources/gopher.icns",
-  "icon_path_linux": "resources/gopher.png",
-  "icon_path_windows": "resources/gopher.ico",
+  "icon_path_darwin": "resources/graphics/icon.icns",
+  "icon_path_linux": "resources/graphics/icon-512.png",
+  "icon_path_windows": "resources/graphics/icon-48.ico",
   "output_path": "output"
 }

@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/nomin-project/nomin/pkg/sender"
-	"github.com/pkg/browser"
 	"github.com/asticode/go-astilectron"
 	"github.com/asticode/go-astilectron-bootstrap"
+	"github.com/nomin-project/nomin/pkg/sender"
+	"github.com/pkg/browser"
 )
 
 type message struct {
@@ -39,7 +39,7 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 			if sendErr != nil {
 				fmt.Println("Error opening error window:", sendErr)
 			}
-			
+
 			return nil, nil
 		}
 
@@ -53,7 +53,7 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 			if sendErr != nil {
 				fmt.Println("Error opening error window:", sendErr)
 			}
-			
+
 			return nil, nil
 		}
 
@@ -68,7 +68,7 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 			if sendErr != nil {
 				fmt.Println("Error opening error window:", sendErr)
 			}
-			
+
 			return nil, nil
 		}
 
