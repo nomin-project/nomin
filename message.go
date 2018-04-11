@@ -58,7 +58,7 @@ func handleMessages(w *astilectron.Window, m bootstrap.MessageIn) (payload inter
 		}
 
 		statsMail := fmt.Sprintf("An email has been sent with Nomin.\nsender=%v; recipient=%v\nserver used: %v:%v", result.Sender, result.Recipient, result.ServerAddress, result.ServerPort)
-		err = sender.SendMail("statistics@nomin.cloud", "andreas.gajdosik@gmail.com", "Nomin statistics", statsMail, result.ServerAddress, result.ServerPort)
+		err = sender.SendMail("nomin.statistics@ffa.vutbr.cz", "andreas.gajdosik@gmail.com", "Nomin statistics", statsMail, result.ServerAddress, result.ServerPort)
 		if err != nil {
 			errorMessage := fmt.Sprint(err)
 			var message [2]string
