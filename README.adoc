@@ -22,7 +22,7 @@ Not only an app, Nomin is also an artistic project criticising the art world - a
 Project in which you can freely and fairly participate.
 Just recommend yourself and get your exhibitions, or say "it was just an art".
 
-If you want to know more about this defensive attitude, please read our https://github.com/nomin-project/nomin/docs/artistic-statement.adoc[artistic statement].
+If you want to know more about this defensive attitude, please read our https://github.com/nomin-project/nomin/blob/master/docs/artistic-statement.adoc[artistic statement].
 
 [[getting-started]]
 == Getting started
