@@ -13,11 +13,16 @@ toc::[]
 == Welcome to Nomin!
 
 Nomin is a graphical application which allows you to send an email from addresses of famous curators to the email boxes of various fine art bienals, prizes and other cultural institutions.
-Nomin is here to help you with pushing your aristic career beyond all the thinkable horizons. 
+With Nomin being recommended as an artist by world top curators is matter of few clicks, not years long process of boring networking.
+Nomin is here to help you with pushing your aristic career beyond all the thinkable horizons!
 
-As the usage of Nomin can be questioned for its ethical aspects, it can be also viewed as a collective performance.
-Just think of it as an artistic project criticising the art world and everything will be alright.
-Or even better.
+We fully understand that the usage of Nomin can be questioned for its ethical aspects.
+Some could call it dishonest or scum, but we call it "art".
+Not only an app, Nomin is also an artistic project criticising the art world - a collective performance of all of us.
+Project in which you can freely and fairly participate.
+Just recommend yourself and get your exhibitions, or say "it was just an art".
+
+If you want to know more about this defensive attitude, please read our https://github.com/nomin-project/nomin/docs/artistic-statement.adoc[artistic statement].
 
 [[getting-started]]
 == Getting started
