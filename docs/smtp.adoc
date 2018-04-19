@@ -1,6 +1,5 @@
 [[smtp]]
 = SMTP configuration
-give back to the community
 :icons:
 :toc: macro
 :toc-title:
