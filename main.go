@@ -101,14 +101,15 @@ func main() {
 			window = w
 
 			// Add listeners on tray
-			t.On(astilectron.EventNameTrayEventClicked, func(e astilectron.Event) (deleteListener bool) { astilog.Info("Tray has been clicked!"); return })
+			//t.On(astilectron.EventNameTrayEventClicked, func(e astilectron.Event) (deleteListener bool) { astilog.Info("Tray has been clicked!"); return })
 			return nil
 		},
 		RestoreAssets: RestoreAssets,
-		TrayOptions: &astilectron.TrayOptions{
-			Image:   astilectron.PtrStr("resources/graphics/icon-20.png"),
-			Tooltip: astilectron.PtrStr("Wow, what a beautiful tray!"),
-		},
+		// Commented out due to #33
+		//TrayOptions: &astilectron.TrayOptions{
+		//	Image:   astilectron.PtrStr("resources/graphics/icon-20.png"),
+			//Tooltip: astilectron.PtrStr("Wow, what a beautiful tray!"),
+		//},
 		WindowOptions: &astilectron.WindowOptions{
 			BackgroundColor: astilectron.PtrStr("#333"),
 			Center:          astilectron.PtrBool(true),
