@@ -110,6 +110,7 @@ const MAIL_TEMPLATES = [
 
 const MAIL_SERVERS = [
     ["mail.upcmail.cz", "25"],
+    ["smtp.vodafonemail.cz", "25"],
     ["smtp.t-email.cz", "25"],
     ["", "25"]
 ]
