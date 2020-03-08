@@ -3,10 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 
+	"github.com/asticode/go-astikit"
 	"github.com/asticode/go-astilectron"
-	"github.com/asticode/go-astilectron-bootstrap"
-	"github.com/asticode/go-astilog"
+	bootstrap "github.com/asticode/go-astilectron-bootstrap"
 	"github.com/pkg/browser"
 	"github.com/pkg/errors"
 )
@@ -22,7 +23,6 @@ var (
 func main() {
 	// Init
 	flag.Parse()
-	astilog.FlagInit()
 
 	// Run bootstrap
 	if err := bootstrap.Run(bootstrap.Options{
@@ -32,14 +32,13 @@ func main() {
 			AppIconDarwinPath:  "resources/graphics/icon.icns",
 			AppIconDefaultPath: "resources/graphics/icon-512.png",
 		},
-		Debug:    *debug,
-		Homepage: "index.html",
+		Debug: *debug,
 		MenuOptions: []*astilectron.MenuItemOptions{
 			{
-				Label: astilectron.PtrStr("Nomin"),
+				Label: astikit.StrPtr("Nomin"),
 				SubMenu: []*astilectron.MenuItemOptions{
 					{
-						Label: astilectron.PtrStr("About"),
+						Label: astikit.StrPtr("About"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
 							err := browser.OpenURL("https://github.com/nomin-project/nomin#about")
 							if err != nil {
@@ -49,7 +48,7 @@ func main() {
 						},
 					},
 					{
-						Label: astilectron.PtrStr("Contribute"),
+						Label: astikit.StrPtr("Contribute"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
 							err := browser.OpenURL("https://github.com/nomin-project/nomin/blob/master/docs/contribute.adoc")
 							if err != nil {
@@ -70,10 +69,10 @@ func main() {
 				},
 			},
 			{
-				Label: astilectron.PtrStr("Help"),
+				Label: astikit.StrPtr("Help"),
 				SubMenu: []*astilectron.MenuItemOptions{
 					{
-						Label: astilectron.PtrStr("Report Bug"),
+						Label: astikit.StrPtr("Report Bug"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
 							err := browser.OpenURL("http://www.github.com/nomin-project/nomin/issues")
 							if err != nil {
@@ -83,7 +82,7 @@ func main() {
 						},
 					},
 					{
-						Label: astilectron.PtrStr("Contact Developer"),
+						Label: astikit.StrPtr("Contact Developer"),
 						OnClick: func(e astilectron.Event) (deleteListener bool) {
 							err := browser.OpenURL("http://www.github.com/nomin-project/nomin#contact-us")
 							if err != nil {
@@ -95,10 +94,9 @@ func main() {
 				},
 			},
 		},
-		MessageHandler: handleMessages,
-		OnWait: func(_ *astilectron.Astilectron, w *astilectron.Window, _ *astilectron.Menu, t *astilectron.Tray, _ *astilectron.Menu) error {
+		OnWait: func(_ *astilectron.Astilectron, ws []*astilectron.Window, _ *astilectron.Menu, _ *astilectron.Tray, _ *astilectron.Menu) error {
 			// Store global variables
-			window = w
+			window = ws[0]
 
 			// Add listeners on tray
 			//t.On(astilectron.EventNameTrayEventClicked, func(e astilectron.Event) (deleteListener bool) { astilog.Info("Tray has been clicked!"); return })
@@ -108,15 +106,19 @@ func main() {
 		// Commented out due to #33
 		//TrayOptions: &astilectron.TrayOptions{
 		//	Image:   astilectron.PtrStr("resources/graphics/icon-20.png"),
-			//Tooltip: astilectron.PtrStr("Wow, what a beautiful tray!"),
+		//Tooltip: astilectron.PtrStr("Wow, what a beautiful tray!"),
 		//},
-		WindowOptions: &astilectron.WindowOptions{
-			BackgroundColor: astilectron.PtrStr("#333"),
-			Center:          astilectron.PtrBool(true),
-			Height:          astilectron.PtrInt(850),
-			Width:           astilectron.PtrInt(1100),
-		},
+		Windows: []*bootstrap.Window{{
+			Homepage:       "index.html",
+			MessageHandler: handleMessages,
+			Options: &astilectron.WindowOptions{
+				BackgroundColor: astikit.StrPtr("#333"),
+				Center:          astikit.BoolPtr(true),
+				Height:          astikit.IntPtr(850),
+				Width:           astikit.IntPtr(1100),
+			},
+		}},
 	}); err != nil {
-		astilog.Fatal(errors.Wrap(err, "running bootstrap failed"))
+		log.Fatal(errors.Wrap(err, "running bootstrap failed"))
 	}
 }
